@@ -1,0 +1,50 @@
+{
+    "app":{
+        "title":"Francais",
+        "Dashboards":"Dashboards",
+         "Send Mailing":"Send Mailing",
+        "Mailing":"Mailing",
+        "Sms":"Sms",
+        "Maps":"Maps",
+        "Notifications":"Notifications",
+        "User Profile":"User Profile",
+        "You have":"You have", 
+        "View all":"View all",
+        "Welcome!":"Welcome!",
+        "My profile":"My profile",
+
+        "Logout":"Logout",
+        "Name is Required":"Name is Required",
+        "Phone":"Phone",
+
+        "Password is Required":"Password is Required",
+
+        "Roles is Required":"Roles is Required",
+
+        "Add Employes":"Add Employes",
+
+        "List of Employees":"List of Employees",
+
+        "Delete Employes":"Delete Employes ",
+
+        "DELETE":"DELETE",
+        "UPDATE":"UPDATE",
+        "List Admin":"List Admin",
+        "List Projet":"List Project",
+        "List Client":"Client List",
+        "Managing Discussions":"Managing Discussions"
+
+
+
+
+     
+
+
+
+    
+
+       
+
+
+    }
+}

@@ -1,0 +1,129 @@
+.hob:hover{
+    background-color: #DEEDF7;
+}
+.ma{
+  margin-right: 70px;
+  font-family: 'Times New Roman';
+    font-style: italic;
+    color: hotpink;
+   
+}
+.sty{
+  margin-right: 70px;
+  width: 200px;
+  height: 200;
+
+}
+.bac{
+
+  background-image: url("/src/assets/img/bacc.png");
+}
+
+.pa{
+    padding: 10px;
+
+}
+.si{
+    font-size: 20px;
+
+}
+.back{
+    background-color: #DEEDF7;
+
+}
+.let{
+    margin-right: 50px;
+}
+.sidebb{
+    background-color: blue;
+}
+.megamenu {
+    position: static
+  }
+  
+  .megamenu .dropdown-menu {
+    background: none;
+    border: none;
+    width: 45%
+  }
+  
+   
+  div.a {
+    text-align: center;
+  }
+  code {
+    color: #130146;
+    background: #fff;
+    
+  }
+  
+  .text-uppercase {
+    letter-spacing: 0.08em
+  }
+  .center {
+    margin: 0 auto !important;
+    float: none !important;
+  }
+  body {
+    margin: 25px;
+  }
+  
+  .icon-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    color: #fff;
+     border: none;
+    outline: none;
+    border-radius: 50%;
+    background-color: #0874da;
+
+   }
+  .icon-button:hover{
+  
+  
+    background-color: #0874da;
+  }
+  .icon-button:hover {
+    cursor: pointer;
+  }
+  
+  .icon-button:active {
+    background: #cccccc;
+  }
+  
+  .icon-button__badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background: red;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  .sc {
+    background-color: lightblue;
+    width: 270px;
+    height: 200px;
+    overflow: scroll;
+  }
+  .sco {
+    background-color: lightblue;
+    width: 500px;
+    scrollbar-color: yellow blue;
+    height: 500px;
+    overflow: scroll;
+  }
+  .souliner {
+    text-decoration: none;
+  }
+  .textseee{
+  
+    font-size: 16px;}

@@ -1,0 +1,42 @@
+<app-navprivate></app-navprivate>
+<ngx-ui-loader></ngx-ui-loader>
+
+<br>
+
+<div class="mar pad ">
+ 
+    <div class="card card-frame">
+        <div class="card-body">
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+            <h4>Phone <span class="obligatoire">*</span></h4>
+            <br>
+
+            <input type="tel"  class="form-control w" formControlName="Phone" cols="30" rows="2">
+
+            <br>
+
+            <br>
+            <small  *ngIf="profileForm.get('Phone').invalid && profileForm.get('Phone').touched" class="text-danger">Phone is Required</small>
+
+    </div>
+    <div class="form-group">
+        <h4>Description <span class="obligatoire">*</span></h4>
+        <br>
+
+        <input type="text" class="form-control w "   formControlName="Description" cols="30" rows="2">
+
+        <br>
+
+        <br>
+        <small  *ngIf="profileForm.get('Description').invalid && profileForm.get('Description').touched" class="text-danger">Description is Required</small>
+
+</div>
+<div class="text-center">
+    <button type="submit" [disabled]="profileForm.invalid"  class="btn btn-primary my-4">Send Message</button>
+  </div>
+</form>
+</div>
+</div>
+</div>

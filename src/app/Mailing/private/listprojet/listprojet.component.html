@@ -1,0 +1,141 @@
+ 
+ 
+  <app-navprivate></app-navprivate>
+  <ngx-ui-loader></ngx-ui-loader>
+
+  <div class="mar pad "> 
+    <div class="card">
+        <!-- Card header -->
+        <div class="card-header border-0">
+          <div class="row">
+            <div class="col-6">
+              <h3 class="mb-0">List des Projets</h3>
+            </div>
+            <div id="datatable-buttons_filter" class="dataTables_filter"><label> <input      class="form-control form-control-sm"  [(ngModel)]="Nom" (input)="Serch()" placeholder="Seach By Name" aria-controls="datatable-buttons"></label></div>
+    
+          </div>
+        </div>
+        <!-- Light table -->
+    
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+               
+                <th>Name</th>
+                <th>email</th>
+                <th>Description</th>
+                 <th>Delete Projet</th>
+                <th>Edit Projet</th>
+    
+    
+              </tr>
+            </thead>            <tbody>
+    
+              <tr *ngFor="let pro of Employes" >
+               
+                <td>
+                  <span class="text-bold"> {{pro.name}} </span>
+                </td>
+                <td>
+                    <span class="text-bold">{{pro.email}}    </span>
+                  </td>
+                  <td>
+                    <span class="text-bold"> {{pro.description}}   </span>
+                  </td>
+              
+                <td><button type="button"   class="btn btn-danger" (click)="openModalDelet(Delete,pro)" >DELETE</button></td>
+                <td><button type="button"   class="btn btn-info"(click)="openModal(editProfileModal,pro)" >UPDATE</button></td>
+    
+              </tr>    
+              
+          
+                   
+              
+              
+              <tbody>
+      
+               
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+    
+    </div>
+    <ng-template #editProfileModal let-modal>
+      <div class="modal-header  ">
+       <h5 class="modal-title" id="editProfileLabel">Edit Projet</h5>
+       <button type="button" class="close" (click)="modal.dismiss()"  aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+       </button>
+      </div>
+      
+      <div class="card card-frame">
+        <div class="card-body">
+
+<form   [formGroup]="profileForm"  (ngSubmit)="onSubmit()"   >
+    <div class="form-group">
+            <h4>Nom De Projet <span class="obligatoire">*</span></h4>
+            <br>
+
+            <input type="text"  class="form-control w" formControlName="Name" cols="30" rows="2">
+
+            <br>
+
+            <br>
+            <small  *ngIf="profileForm.get('Name').invalid && profileForm.get('Name').touched" class="text-danger">{{'app.Name is Required' | translate}}</small>
+
+    </div>
+    <div class="form-group">
+        <h4> Client  Email<span class="obligatoire">*</span>
+        </h4>
+        <br>
+
+
+        <input type="text"  class="form-control w" formControlName="Email" cols="30" rows="2">
+
+        <br>
+        <small  *ngIf="profileForm.get('Email').invalid && profileForm.get('Email').touched" class="text-danger">Email is Required</small>
+
+        <br>
+
+</div>
+    <div class="form-group">
+        <h4>Description <span class="obligatoire">*</span></h4>
+        <br>
+
+        <textarea type="text" class="form-control text-black  w "   formControlName="Description" cols="30" rows="2">
+        </textarea>
+        <br>
+
+        <br>
+        <small  *ngIf="profileForm.get('Description').invalid && profileForm.get('Description').touched" class="text-danger">Description is Required</small>
+
+</div>
+<div class="text-center">
+    <button type="submit"  [disabled]="profileForm.invalid"  class="btn btn-primary my-4">Update Projet</button>
+  </div>
+</form>
+ 
+</div>
+</div>
+     </ng-template>
+    <ng-template #Delete let-modal>
+    <div class="modal-header">
+    <h5 class="modal-title" id="editProfileLabel">Delete Projet</h5>
+    <button type="button" class="close" (click)="modal.dismiss()"  aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    
+    <div class="modal-body">
+    
+    
+    <div class="modal-footer">
+     <button type="button" (click)="modal.dismiss()" class="btn btn-secondary" >Close</button>
+     <button type="submit"  (click)=" Deletee()"   class="btn btn-primary">Delete Projet</button>
+    </div>
+    
+    </div>
+    </ng-template> 

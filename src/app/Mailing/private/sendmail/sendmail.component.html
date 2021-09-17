@@ -1,0 +1,109 @@
+<app-navprivate></app-navprivate>*
+<ngx-ui-loader></ngx-ui-loader>
+
+
+<br>
+
+<div class="mar pad ">
+ 
+    <div class="card card-frame">
+        <div class="card-body">
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+            <h4>Name de  Mailing <span class="obligatoire">*</span></h4>
+            <br>
+
+            <input type="text" class="form-control w"   formControlName="Name" cols="30" rows="2">
+
+            <br>
+
+            <br>
+            <small  *ngIf="profileForm.get('Name').invalid && profileForm.get('Name').touched" class="text-danger">Name is Required</small>
+
+    </div>
+    <div class="form-group">
+        <h4>A .  <span class="obligatoire">*</span></h4>
+        <br>
+
+        <input type="email"   class="form-control w" formControlName="Email" cols="30" rows="2">
+
+        <br>
+
+        <br>
+        <small  *ngIf="profileForm.get('Email').invalid && profileForm.get('Email').touched" class="text-danger">Email is Required</small>
+
+
+</div>
+    <div class="form-group"> 
+            <h4>Description Mailing <span class="obligatoire">*</span></h4>
+            <br>
+
+            <textarea name="textera" class="form-control w" formControlName="Description" cols="30" rows="2">
+
+
+
+            </textarea> 
+            <br>
+            <br>
+            <small  *ngIf="profileForm.get('Description').invalid && profileForm.get('Description').touched" class="text-danger">Description is Required</small>
+
+    </div>
+    <div class="form-group">
+            <h4>Date  Mailing <span class="obligatoire">*</span></h4>
+            <br>
+            <input type="datetime-local"  
+            formControlName="Date"
+      
+            class="form-control w"
+             
+
+            >
+            <br>
+            <br>
+            <small  *ngIf="profileForm.get('Date').invalid && profileForm.get('Date').touched" class="text-danger">Date is Required</small>
+
+    </div>
+            <div class="form-group">
+            <h4>Heur  Mailing <span class="obligatoire">*</span></h4>
+            <br>
+
+            <input type="time"    class="form-control w"
+             formControlName="Time"             
+            >
+            <br>
+            <br>
+            <small  *ngIf="profileForm.get('Time').invalid && profileForm.get('Time').touched" class="text-danger">Time is Required</small>
+
+            </div>
+            <div class="form-group">
+            <h4>Objet de  Mailing <span class="obligatoire">*</span></h4>
+            <br>
+
+            <input class="form-control w" type="text" name="textera" formControlName="Objet" cols="30" rows="2">
+
+            <br>
+
+            <br>
+            <small  *ngIf="profileForm.get('Objet').invalid && profileForm.get('Objet').touched" class="text-danger">Objet is Required</small>
+
+            </div>
+            <div class="form-group">
+            <h4>File</h4>
+            <br>
+
+            <input class="form-control w" type="file" formControlName="File" accept=".pdf,.png,.jpg,.docx,.pptx" name="textera" id="" cols="30" rows="2">
+
+            <br>
+
+            <br>
+            </div>
+            <div class="text-center">
+                <button type="submit" [disabled]="profileForm.invalid"  class="btn btn-primary my-4">Send Email</button>
+              </div>
+        </form>
+
+           </div>
+ 
+         </div>
+</div>

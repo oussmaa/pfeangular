@@ -1,0 +1,152 @@
+<app-navprivate></app-navprivate>
+ 
+ 
+<ngx-ui-loader></ngx-ui-loader>
+
+
+
+<div class="mar pad "> 
+  <div class="card">
+      <!-- Card header -->
+      <div class="card-header border-0">
+        <div class="row">
+          <div class="col-6">
+            <h3 class="mb-0">List des Admins</h3>
+          </div>
+          <div id="datatable-buttons_filter" class="dataTables_filter"><label> <input      class="form-control form-control-sm"  [(ngModel)]="Nom" (input)="Serch()" placeholder="Seach By Name" aria-controls="datatable-buttons"></label></div>
+  
+        </div>
+      </div>
+      <!-- Light table -->
+  
+      <div class="table-responsive">
+        <table class="table align-items-center table-flush">
+          <thead class="thead-light">
+            <tr>
+             
+              <th>  Username</th>
+              <th>email</th>
+              <th>Phone</th>
+              <th>Role</th>
+              <th>Delete Admin</th>
+              <th>Edit Admin</th>
+  
+  
+            </tr>
+          </thead>            <tbody>
+  
+            <tr *ngFor="let emp of Employes" >
+             
+              <td>
+                <span class="text-bold"> {{emp.username}} </span>
+              </td>
+              <td>
+                  <span class="text-bold">{{emp.email}}    </span>
+                </td>
+                <td>
+                  <span class="text-bold"> {{emp.numero}}   </span>
+                </td>
+              <td>
+                  <span class="text-bold"> {{emp.roles}}  </span>
+  
+              </td>
+              <td><button type="button"   class="btn btn-danger" (click)="openModalDelet(Delete,emp)" >DELETE</button></td>
+              <td><button type="button"   class="btn btn-info"(click)="openModal(editProfileModal,emp)" >UPDATE</button></td>
+  
+            </tr>    
+            
+        
+                 
+            
+            
+            <tbody>
+    
+             
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  
+  </div>
+  <ng-template #editProfileModal let-modal>
+    <div class="modal-header  ">
+     <h5 class="modal-title" id="editProfileLabel">Edit Admin</h5>
+     <button type="button" class="close" (click)="modal.dismiss()"  aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+     </button>
+    </div>
+    
+    <div class="modal-body  ">
+      <form role="form" [formGroup]="profileForm"  (ngSubmit)="onSubmit()" >
+        <div class="form-group mb-3">
+          <div class="input-group input-group-merge input-group-alternative">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="ni ni-single-02 text-blue"></i></span>
+            </div>
+          
+            <input class="form-control text-blue" formControlName="Name" placeholder="Name" type="text">
+          </div>
+          <small  *ngIf="profileForm.get('Name').invalid && profileForm.get('Name').touched" class="text-danger">{{'app.Name is Required' | translate}}</small>
+  
+        </div>
+        <div class="form-group mb-3">
+          <div class="input-group input-group-merge input-group-alternative">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="ni ni-email-83 text-blue"></i></span>
+            </div>
+            <input class="form-control text-blue" formControlName="Email" placeholder="Email" type="email">
+          </div>
+          <small  *ngIf="profileForm.get('Email').invalid && profileForm.get('Email').touched" class="text-danger">Email is Required</small>
+  
+        </div>
+        <div class="form-group mb-3">
+          <div class="input-group input-group-merge input-group-alternative">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="ni ni-mobile-button text-blue"></i></span>
+            </div>
+            <input class="form-control text-blue" formControlName="Phone" placeholder="Phone" type="tel">
+          </div>
+          <small  *ngIf="profileForm.get('Phone').invalid && profileForm.get('Phone').touched" class="text-danger">Phone is Required</small>
+  
+        </div>
+      
+        <div class="form-group">
+          
+        <select class="form-control "  formControlName="roles">
+       
+          <option >Employes</option>
+          <option >Client</option>
+  
+          <option>Admin</option>
+  
+        </select>
+        <small  *ngIf="profileForm.get('roles').invalid && profileForm.get('roles').touched" class="text-danger">Roles is required</small>
+  
+        </div>
+      
+        <div class="text-center">
+          <button type="submit" [disabled]="profileForm.invalid" class="btn  btn-default my-4">UPDATE Admin</button>
+        </div>
+        
+      </form>
+    </div>
+   </ng-template>
+  <ng-template #Delete let-modal>
+  <div class="modal-header">
+  <h5 class="modal-title" id="editProfileLabel">Delete Admin</h5>
+  <button type="button" class="close" (click)="modal.dismiss()"  aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  
+  <div class="modal-body">
+  
+  
+  <div class="modal-footer">
+   <button type="button" (click)="modal.dismiss()" class="btn btn-secondary" >Close</button>
+   <button type="submit"  (click)=" Deletee()"   class="btn btn-primary">Delete Admin</button>
+  </div>
+  
+  </div>
+  </ng-template> 

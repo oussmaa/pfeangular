@@ -1,0 +1,82 @@
+<div class="main-content back" >
+  <!-- Header -->
+  <div class="header back  py-lg-4 pt-lg-5">
+    <div class="container">
+      <div class="header-body text-center mb-7">
+    
+      </div>
+    </div>
+   
+  </div>
+  <!-- Page content -->
+  <div class="container back mt--8 pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-7">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-header bg-transparent pb-5">
+            <div class="text-muted text-center mt-2 mb-3"><small>Sign in with</small></div>
+            <div class="btn-wrapper text-center">
+              <a  class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon"><img src="../../assets/img/icons/common/github.svg"></span>
+                <span class="btn-inner--text">Github</span>
+              </a>
+              <a   class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon"><img src="../../assets/img/icons/common/google.svg"></span>
+                <span class="btn-inner--text">Google</span>
+              </a>
+            </div>
+          </div>
+          <div class="card-body px-lg-6 py-lg-6">
+            
+            <form role="form"  [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+              <div class="form-group mb-3">
+                <div class="input-group input-group-merge input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="ni ni-email-83 text-blue"></i></span>
+                  </div>
+                  <input class="form-control text-blue"formControlName="Email"  placeholder="Email" type="email">
+                </div>
+                <small  *ngIf="profileForm.get('Email').invalid && profileForm.get('Email').touched" class="text-danger">Email is Required</small>
+
+              </div>
+              <div class="form-group">
+                <div class="input-group input-group-merge input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class=" text-blue ni ni-lock-circle-open"></i></span>
+                  </div>
+                  <input class="form-control text-blue" formControlName="password" placeholder="Password" type="password">
+                </div>
+                <small  *ngIf="profileForm.get('password').invalid && profileForm.get('password').touched" class="text-danger">Password is Required</small>
+
+              </div>
+              <div class="custom-control custom-control-alternative custom-checkbox">
+                <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+                <label class="custom-control-label" for=" customCheckLogin">
+                  <span class="text-muted text-blue">Remember me</span>
+                </label>
+              </div>
+              <div class="text-center">
+                <button type="submit" [disabled]="profileForm.invalid" class="btn btn-primary my-4">Sign in</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <div class="row mt-3">
+          <div class="col-6">
+            <a routerLink="/forgetpassword" class="f"><small>Forgot password?</small></a>
+          </div>
+          <div class="col-6 text-right">
+            <a routerLink="/register"  class="f"><small>Create new account</small></a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

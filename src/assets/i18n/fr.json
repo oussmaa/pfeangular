@@ -1,0 +1,46 @@
+{
+    "app":{
+        "title":"Francais",
+        "Dashboards":"Tableaux de bord",
+         "Send Mailing":"Envoyer un publipostage",
+        "Mailing":"Envoi postal",
+        "Sms":"Sms",
+        "Maps":"Plans",
+        "Notifications":"Notifications",
+        "User Profile":"Profil de l'utilisateur",
+        "You have":"Tu as", 
+        "View all":"Voir tout",
+        "Welcome!":"Bienvenue!",
+        "My profile":"Mon profil",
+        "Logout":"Se déconnecter",
+        "Name is Required":"Le nom est requis",
+        "Phone":"le téléphone est obligatoire",
+
+        "Password is Required":"Mot de passe requis",
+
+        "Roles is Required":"Rôles est requis",
+
+        "Add Employes":"Ajouter des employés",
+
+        "List of Employees":"Liste des Employés",
+
+        "Delete Employes":"Supprimer des employés ",
+
+        "DELETE":"EFFACER",
+        "UPDATE":"Modifier les employés",
+        
+        "List Admin":"Liste Admin",
+        "List Projet":"Liste Projet",
+        "List Client":"List Client",
+        "Managing Discussions":"Gestion Des discussions"
+     
+
+
+
+    
+
+       
+
+
+    }
+}

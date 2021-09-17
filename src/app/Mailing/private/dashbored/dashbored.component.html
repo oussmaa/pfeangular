@@ -1,0 +1,55 @@
+ <app-navprivate></app-navprivate>
+ <br>
+ <div class=" mar  pad ">
+     
+ <div class="chart-wrapper pos2 ">
+    <h1>List des Users</h1>
+    <canvas baseChart 
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+  <h1>List des Employer</h1>
+
+ 
+ <canvas baseChart 
+ [datasets]="ChartData"
+[colors]="ChartColors"
+ [labels]="ChartLabels"
+
+ [options]="ChartOptions"
+
+ [plugins]="ChartPlugins"
+
+ [legend]="ChartLegend"
+
+ [chartType]="ChartType">
+
+
+ </canvas>
+ <h1>Statstique des mails</h1>
+  
+ <canvas baseChart 
+ [datasets]="ChartData2"
+[colors]="ChartColors"
+ [labels]="ChartLabels"
+
+ [options]="ChartOptions"
+
+ [plugins]="ChartPlugins"
+
+ [legend]="ChartLegend"
+
+ [chartType]="ChartType">
+
+
+ </canvas>
+
+ </div>
+ </div>
+    
+  
+ <router-outlet></router-outlet>
