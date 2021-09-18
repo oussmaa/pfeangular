@@ -6,6 +6,8 @@ import { SocketService } from 'src/app/socket.service';
 import { Message } from '../../shared/Model/Message';
 import { SendMailService } from '../../shared/Service/send-mail.service';
 import { NgxUiLoaderService } from "ngx-ui-loader"; // Import NgxUiLoaderService
+import { User } from '../../shared/Model/User';
+import { AuthentificationService } from '../../shared/Service/authentification.service';
 
 @Component({
   selector: 'app-sendmail',
@@ -13,12 +15,15 @@ import { NgxUiLoaderService } from "ngx-ui-loader"; // Import NgxUiLoaderService
   styleUrls: ['./sendmail.component.css']
 })
 export class SendmailComponent implements OnInit {
-
-  constructor(private ngxService: NgxUiLoaderService,private socket:SocketService,private toestar:ToastrService, private router: Router,private ser:SendMailService,private route: ActivatedRoute) {
+  public user!: User;
+id:any;
+fileData!: File;
+  constructor(private service:AuthentificationService,private ngxService: NgxUiLoaderService,private socket:SocketService,private toestar:ToastrService, private router: Router,private ser:SendMailService,private route: ActivatedRoute) {
 
    }
+   myDate = new Date();
   errorMessage = '';
-
+email:any;
   profileForm!: FormGroup;
   ngOnInit(): void {
 
@@ -41,11 +46,28 @@ export class SendmailComponent implements OnInit {
       'File': new FormControl(null),
 
     });
+    this.id=localStorage.getItem("user_id");
+
+
   }
+  
+  fileProgress(fileInput: any) {
+    this.fileData = <File>fileInput.target.files[0];
+    
+   
+     
+}
   onSubmit()
-  {
 
 
+
+  {  
+ 
+    
+    
+    var that = this;
+
+    that.ngxService.start()
  
  
     let obj: Message = {
@@ -63,24 +85,35 @@ export class SendmailComponent implements OnInit {
  
     this.socket.sendMessage(obj);
     this.toestar.success("Send Succée");
-    this.router.navigate(['/dashbored/mailing'], {relativeTo: this.route});
+ 
+    this.service.GetUserById(this.id).subscribe(
 
-   this.ser.SendMaill(this.profileForm.value.Name,this.profileForm.value.Description,this.profileForm.value.Objet,
-    this.profileForm.value.Date,this.profileForm.value.Email,this.profileForm.value.Time,this.profileForm.value.Email,this.profileForm.value.File).subscribe(
-      data => {
-     
-   
-      
-  
+      data=>{
+               this.user=data
+               this.email=data.email;
+               this.ser.SendMaillSansfile(this.profileForm.value.Name,this.profileForm.value.Description,this.profileForm.value.Objet,
+                this.profileForm.value.Date,this.email,this.profileForm.value.Time,this.profileForm.value.Email,this.profileForm.value.File).subscribe(
+                  data => {
+                 
+               this.ngOnInit();
+               that.ngxService.stop()
+              
+                  },
+                  err => {
+                    this.errorMessage = err.error.message;
+                    that.ngxService.stop()
+                  }
+              
+              
+              
+                  );
+             
       },
-      err => {
-        this.errorMessage = err.error.message;
-   
+      err=>
+      {
+    
       }
-  
-  
-  
-      );
+    )
  
 
   }

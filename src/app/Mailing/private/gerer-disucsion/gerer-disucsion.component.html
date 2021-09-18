@@ -1,2 +1,61 @@
 <app-navprivate></app-navprivate>
 <ngx-ui-loader></ngx-ui-loader>
+<br>
+
+<div class="mar pad ">
+ 
+    <div class="card card-frame">
+        <div class="card-body">
+
+<form   [formGroup]="profileForm"  (ngSubmit)="onSubmit()"   >
+    <div class="form-group">
+            <h4>Nom De Room <span class="obligatoire">*</span></h4>
+            <br>
+
+            <input type="text"  class="form-control  " formControlName="Name"  >
+
+            <br>
+
+            <br>
+            <small  *ngIf="profileForm.get('Name').invalid && profileForm.get('Name').touched" class="text-danger">{{'app.Name is Required' | translate}}</small>
+
+    </div>
+    <div class="form-group">
+        <h4> Client  Email<span class="obligatoire">*</span>
+        </h4>
+        <br>
+
+
+        <input type="text"  class="form-control " formControlName="Emailuser" cols="30" rows="2">
+
+        <br>
+        <small  *ngIf="profileForm.get('Emailuser').invalid && profileForm.get('Emailuser').touched" class="text-danger">Email is Required</small>
+
+        <br>
+
+</div>
+<div class="form-group">
+    <h4> Employer  Email<span class="obligatoire">*</span>
+    </h4>
+    <br>
+
+
+    <input type="text"  class="form-control  " formControlName="Emailemployer" cols="30" rows="2">
+
+    <br>
+    <small  *ngIf="profileForm.get('Emailemployer').invalid && profileForm.get('Emailemployer').touched" class="text-danger">Email is Required</small>
+
+    <br>
+
+</div>
+, 
+<div class="text-center">
+    <button type="submit"  [disabled]="profileForm.invalid"  class="btn btn-primary my-4">Ajout Room</button>
+  </div>
+</form>
+<div class="text-center">
+    <button type="button"  routerLink="/dashbored/listroom" class="btn btn-primary my-4">List Room</button>
+  </div>
+</div>
+</div>
+</div>

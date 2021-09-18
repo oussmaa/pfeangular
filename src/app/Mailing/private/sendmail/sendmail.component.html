@@ -92,7 +92,7 @@
             <h4>File</h4>
             <br>
 
-            <input class="form-control w" type="file" formControlName="File" accept=".pdf,.png,.jpg,.docx,.pptx" name="textera" id="" cols="30" rows="2">
+            <input class="form-control w" (change)="fileProgress($event) " type="file" formControlName="File" accept=".pdf,.png,.jpg,.docx,.pptx" name="textera" id="" cols="30" rows="2">
 
             <br>
 

@@ -35,6 +35,8 @@ import { ListemployesssComponent } from './listemployesss/listemployesss.compone
 import { AjoutadminComponent } from './ajoutadmin/ajoutadmin.component';
 import { AjoutClientComponent } from './ajout-client/ajout-client.component';
 import { ListprojetComponent } from './listprojet/listprojet.component';
+import { ListroommdiscussionComponent } from './listroommdiscussion/listroommdiscussion.component';
+import { ChatComponent } from './chat/chat.component';
     @NgModule({
   declarations: [
     DashboredComponent,
@@ -57,6 +59,8 @@ import { ListprojetComponent } from './listprojet/listprojet.component';
     AjoutadminComponent,
     AjoutClientComponent,
     ListprojetComponent,
+    ListroommdiscussionComponent,
+    ChatComponent,
       
   ],
   

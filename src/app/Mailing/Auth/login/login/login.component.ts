@@ -49,7 +49,9 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/dashbored'], {relativeTo: this.route});
         this.ser.isLoginClient=true;
 
-      } else if (role === 'Admin') {
+      } 
+      
+      else if (role === 'Admin') {
         this.router.navigate(['/dashboard']);
         this.ser.isLoginAdmin=true;
 

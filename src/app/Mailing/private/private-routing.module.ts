@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AjoutClientComponent } from './ajout-client/ajout-client.component';
 import { AjoutadminComponent } from './ajoutadmin/ajoutadmin.component';
+import { ChatComponent } from './chat/chat.component';
 import { ClientComponent } from './client/client.component';
 import { DashboredComponent } from './dashbored/dashbored.component';
 import { EmailDetailleComponent } from './email-detaille/email-detaille.component';
@@ -11,6 +12,7 @@ import { ListClientComponent } from './list-client/list-client.component';
  import { ListemployerComponent } from './listemployer/listemployer.component';
 import { ListemployesssComponent } from './listemployesss/listemployesss.component';
 import { ListprojetComponent } from './listprojet/listprojet.component';
+import { ListroommdiscussionComponent } from './listroommdiscussion/listroommdiscussion.component';
 import { MailingComponent } from './mailing/mailing.component';
 import { MapsComponent } from './maps/maps.component';
 import { MessageSendeComponent } from './message-sende/message-sende.component';
@@ -78,7 +80,16 @@ const routes: Routes = [
     component:ListprojetComponent   
     
   },
-  
+  {
+    path:'listroom',
+    component:ListroommdiscussionComponent   
+    
+  },
+  {
+    path:'chat',
+    component:ChatComponent   
+    
+  },
   {
     path:'discussion',
     component:GererDisucsionComponent   

@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Projet } from '../Model/Projet';
+import { Room } from '../Model/Room';
 import { User } from '../Model/User';
 
 @Injectable({
@@ -239,4 +240,44 @@ getcountbyroles(roles:string): Observable<any> {
         return this.httpClient.delete("http://localhost:8065/api/projet/deleteprojetc/"+id);
         
       }
+
+
+      saverommm(name:string,emailuser:string,emailemployer:string,idadmin:string): Observable<any> {
+        return this.httpClient.post("http://localhost:8065/api/projet/saveromm", {
+          emailuser,
+          emailemployer,
+          idadmin,
+          name,
+        
+         
+   
+       
+        }, this.httpOptions);
+        
+      }
+
+      getbyidadin(idadmin:string): Observable<any> {
+        return this.httpClient.get<Room>("http://localhost:8065/api/projet/getrommadmin/"+idadmin );
+         }
+
+
+
+         deleteroomdis(id:string): Observable<any> {
+          return this.httpClient.delete("http://localhost:8065/api/projet/deleteroom/"+id);
+          
+        }
+
+
+
+        updateroom(name:string,emailuser:string,emailemployer:string,id:number): Observable<any> {
+          return this.httpClient.put("http://localhost:8065/api/projet/updateroom/"+id, {
+            
+            emailuser,
+            emailemployer,
+            name,
+            
+         
+          }, this.httpOptions);
+          
+        }
 }

@@ -37,13 +37,33 @@ export class SendMailService {
       date ,
       email,
       time ,
-      sendTo:sendTo,
+      sendTo,
       file:'C:/Users/Administrator/Desktop/1.pdf'
     
    
     }, this.httpOptions);
 }
+SendMaillSansfile(name: string, description: string, subject: string,date:Date, email: string,time:String,sendTo:string,file:string): Observable<any> {
+  return this.httpClient.post("http://localhost:8065/api/mail/sendmail", {
+    name,
+    description,
+    subject,
+    date ,
+    email,
+    time ,
+    sendTo,
+    file:'C:/Users/Administrator/Desktop/1.pdf'
+  
+ 
+  }, this.httpOptions);
+}
 getMessage(email:string): Observable<any> {
   return this.httpClient.get<Message[]>("http://localhost:8065/api/mail/findbyEmail/"+email );
+}
+getMessageSendto(email:string): Observable<any> {
+  return this.httpClient.get<Message[]>("http://localhost:8065/api/mail/findidsend/"+email );
+}
+findbyid(id:string): Observable<any> {
+  return this.httpClient.get<Message[]>("http://localhost:8065/api/mail/findbyid/"+id );
 }
 }

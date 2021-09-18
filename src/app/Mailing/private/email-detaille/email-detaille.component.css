@@ -1,0 +1,16 @@
+.mar{
+    margin-left: 30px;
+}
+.pad{
+    padding: 60px;
+}
+.marrigh{
+    margin-right: 10px;
+}
+.maleft{
+    margin-left: 10px;
+    margin-top: auto;
+}
+.bor{
+    border: 4px dotted blue;
+}
