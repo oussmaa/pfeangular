@@ -6,15 +6,15 @@
 
 <div class="mar pad ">
   <div class="card-body px-lg-4 py-lg-4">
-       
+
     <form role="form" [formGroup]="profileForm"  (ngSubmit)="onSubmit()"  >
       <div class="form-group mb-3">
         <div class="input-group input-group-merge input-group-alternative">
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="ni ni-single-02 text-blue"></i></span>
           </div>
-        
-          <input class="form-control text-blue" formControlName="Name" placeholder="Name" type="text">
+
+          <input class="form-control text-blue" formControlName="Name" placeholder="{{'app.name'|translate}}" type="text">
         </div>
         <small  *ngIf="profileForm.get('Name').invalid && profileForm.get('Name').touched" class="text-danger">{{'app.Name is Required' | translate}}</small>
 
@@ -24,7 +24,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="ni ni-email-83 text-blue"></i></span>
           </div>
-          <input class="form-control text-blue" formControlName="Email" placeholder="Email" type="email">
+          <input class="form-control text-blue" formControlName="Email" placeholder="{{'app.Email'|translate}}" type="email">
         </div>
         <small  *ngIf="profileForm.get('Email').invalid && profileForm.get('Email').touched" class="text-danger">Email is Required</small>
 
@@ -34,7 +34,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="ni ni-mobile-button text-blue"></i></span>
           </div>
-          <input class="form-control text-blue" formControlName="Phone" placeholder="Phone" type="tel">
+          <input class="form-control text-blue" formControlName="Phone" placeholder="{{'app.phone'|translate}}" type="tel">
         </div>
         <small  *ngIf="profileForm.get('Phone').invalid && profileForm.get('Phone').touched" class="text-danger">Phone is Required</small>
 
@@ -44,31 +44,31 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="ni ni-lock-circle-open text-blue"></i></span>
           </div>
-          <input class="form-control text-blue" formControlName="password"placeholder="Password" type="password">
+          <input class="form-control text-blue" formControlName="password"placeholder="{{'app.Password'|translate}}" type="password">
         </div>
         <small  *ngIf="profileForm.get('password').invalid && profileForm.get('password').touched" class="text-danger">Password to be 8 lenght and uppercase and lowercase and number and special caracter</small>
 
       </div>
       <div class="form-group">
-          
+
         <select class="form-control "  formControlName="roles">
-       
+
           <option >Employes</option>
           <option >Client</option>
-  
-   
+
+
         </select>
         <small  *ngIf="profileForm.get('roles').invalid && profileForm.get('roles').touched" class="text-danger">Roles is required</small>
-  
+
         </div>
-    
+
       <div class="text-center">
-        <button type="submit" [disabled]="profileForm.invalid" class="btn btn-primary my-4">Add Client</button>
+        <button type="submit" [disabled]="profileForm.invalid" class="btn btn-primary my-4">{{'app.Add Client'|translate}}</button>
       </div>
-      
+
     </form>
     <div class="text-center">
-      <button type="button" routerLink="/dashbored/listclient" class="btn btn-primary my-4">List Clients</button>
+      <button type="button" routerLink="/dashbored/listclient" class="btn btn-primary my-4">{{'app.List Clients'|translate}}</button>
     </div>
   </div>
- 
+ </div>

@@ -1,55 +1,55 @@
- <app-navprivate></app-navprivate>
- <br>
- <div class=" mar  pad ">
-     
- <div class="chart-wrapper pos2 ">
-    <h1>List des Users</h1>
-    <canvas baseChart 
-    [datasets]="barChartData"
-    [labels]="barChartLabels"
-    [options]="barChartOptions"
-    [plugins]="barChartPlugins"
-    [legend]="barChartLegend"
-    [chartType]="barChartType">
-  </canvas>
-  <h1>List des Employer</h1>
+<app-navprivate></app-navprivate>
+<br>
+<div class=" mar  pad ">
 
- 
- <canvas baseChart 
- [datasets]="ChartData"
-[colors]="ChartColors"
- [labels]="ChartLabels"
-
- [options]="ChartOptions"
-
- [plugins]="ChartPlugins"
-
- [legend]="ChartLegend"
-
- [chartType]="ChartType">
+  <div class="chart-wrapper pos2 ">
+    <h1>{{'app.List of Users' | translate}}</h1>
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+    </canvas>
+    <h1>{{'app.List of Employers' | translate}}</h1>
 
 
- </canvas>
- <h1>Statstique des mails</h1>
-  
- <canvas baseChart 
- [datasets]="ChartData2"
-[colors]="ChartColors"
- [labels]="ChartLabels"
+    <canvas baseChart
+            [datasets]="ChartData"
+            [colors]="ChartColors"
+            [labels]="ChartLabels"
 
- [options]="ChartOptions"
+            [options]="ChartOptions"
 
- [plugins]="ChartPlugins"
+            [plugins]="ChartPlugins"
 
- [legend]="ChartLegend"
+            [legend]="ChartLegend"
 
- [chartType]="ChartType">
+            [chartType]="ChartType">
 
 
- </canvas>
+    </canvas>
+    <h1>{{'app.Mail statistics' | translate}}</h1>
 
- </div>
- </div>
-    
-  
- <router-outlet></router-outlet>
+    <canvas baseChart
+            [datasets]="ChartData2"
+            [colors]="ChartColors"
+            [labels]="ChartLabels"
+
+            [options]="ChartOptions"
+
+            [plugins]="ChartPlugins"
+
+            [legend]="ChartLegend"
+
+            [chartType]="ChartType">
+
+
+    </canvas>
+
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

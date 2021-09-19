@@ -11,45 +11,45 @@ const routes: Routes = [
   {
     path:'',
     loadChildren:()=>import('./Auth/login/login.module').then(m=>m.LoginModule),
-    canActivate:[IsloginGuard]
-      
-    
+    // canActivate:[IsloginGuard]
+
+
 },
 {
   path:'dashbored',
   loadChildren:()=>import('./private/private.module').then(m=>m.PrivateModule),
-  canActivate:[UsergardesGuard]
-   
-  
+  // canActivate:[UsergardesGuard]
+
+
 },
 {
   path:'register',
   loadChildren:()=>import('./Auth/register/register.module').then(m=>m.RegisterModule),
-   
-  
+
+
 },
 {
   path:'forgetpassword',
-  component:ForgetpasswordComponent   
-  
+  component:ForgetpasswordComponent
+
 },
 {
   path:'confirememail/:id',
-  component:ConfirmEmailComponent   
-  
+  component:ConfirmEmailComponent
+
 },
 {
   path:'updatepassword/:id',
-  component:UpdatePasswordComponent   
-  
+  component:UpdatePasswordComponent
+
 },
- 
+
 {
   path:'',
   redirectTo:'',
-  pathMatch:'full' 
+  pathMatch:'full'
 },
-  
+
 ];
 
 @NgModule({

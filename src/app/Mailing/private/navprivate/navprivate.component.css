@@ -6,12 +6,12 @@
   font-family: 'Times New Roman';
     font-style: italic;
     color: hotpink;
-   
+
 }
 .sty{
   margin-right: 70px;
   width: 200px;
-  height: 200;
+  height: 60px;
 
 }
 .bac{
@@ -40,23 +40,23 @@
 .megamenu {
     position: static
   }
-  
+
   .megamenu .dropdown-menu {
     background: none;
     border: none;
     width: 45%
   }
-  
-   
+
+
   div.a {
     text-align: center;
   }
   code {
     color: #130146;
     background: #fff;
-    
+
   }
-  
+
   .text-uppercase {
     letter-spacing: 0.08em
   }
@@ -67,7 +67,7 @@
   body {
     margin: 25px;
   }
-  
+
   .icon-button {
     position: relative;
     display: flex;
@@ -83,18 +83,18 @@
 
    }
   .icon-button:hover{
-  
-  
+
+
     background-color: #0874da;
   }
   .icon-button:hover {
     cursor: pointer;
   }
-  
+
   .icon-button:active {
     background: #cccccc;
   }
-  
+
   .icon-button__badge {
     position: absolute;
     top: -10px;
@@ -125,5 +125,5 @@
     text-decoration: none;
   }
   .textseee{
-  
+
     font-size: 16px;}

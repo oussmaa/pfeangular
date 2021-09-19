@@ -5,105 +5,142 @@
 <br>
 
 <div class="mar pad ">
- 
-    <div class="card card-frame">
-        <div class="card-body">
 
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-            <h4>Name de  Mailing <span class="obligatoire">*</span></h4>
+  <div class="card card-frame">
+    <div class="card-body">
+      <img src="https://www.dynamique-mag.com/wp-content/uploads/690512d16274f519f0dffa66661ec055.jpg " height="500px "
+           width="500px" class="float-right">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
+        <table class="pi">
+        <tr >
+          <td >
+            <h4 >{{'app.Address name'|translate}} <span class="obligatoire">*</span></h4>
+
+
+            <input type="text" class="form-control w " formControlName="Name" cols="30" rows="2">
+
             <br>
 
-            <input type="text" class="form-control w"   formControlName="Name" cols="30" rows="2">
+            <br>
+            <small *ngIf="profileForm.get('Name').invalid && profileForm.get('Name').touched" class="text-danger">Name
+              is
+              Required</small>
+          </td>
+          <td>
+
+            <h4 class="pt">{{'app.to'|translate}} <span class="obligatoire">*</span></h4>
+
+
+            <input type="email" class="form-control w pinput" formControlName="Email" cols="30" rows="2">
 
             <br>
 
             <br>
-            <small  *ngIf="profileForm.get('Name').invalid && profileForm.get('Name').touched" class="text-danger">Name is Required</small>
+            <small *ngIf="profileForm.get('Email').invalid && profileForm.get('Email').touched" class="text-danger">Email
+              is Required</small>
 
-    </div>
-    <div class="form-group">
-        <h4>A .  <span class="obligatoire">*</span></h4>
-        <br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h4>{{'app.Description Mailing'|translate}}<span class="obligatoire">*</span></h4>
 
-        <input type="email"   class="form-control w" formControlName="Email" cols="30" rows="2">
-
-        <br>
-
-        <br>
-        <small  *ngIf="profileForm.get('Email').invalid && profileForm.get('Email').touched" class="text-danger">Email is Required</small>
-
-
-</div>
-    <div class="form-group"> 
-            <h4>Description Mailing <span class="obligatoire">*</span></h4>
-            <br>
 
             <textarea name="textera" class="form-control w" formControlName="Description" cols="30" rows="2">
 
 
 
-            </textarea> 
+            </textarea>
             <br>
             <br>
-            <small  *ngIf="profileForm.get('Description').invalid && profileForm.get('Description').touched" class="text-danger">Description is Required</small>
+            <small *ngIf="profileForm.get('Description').invalid && profileForm.get('Description').touched"
+                   class="text-danger">Description is Required</small>
 
-    </div>
-    <div class="form-group">
-            <h4>Date  Mailing <span class="obligatoire">*</span></h4>
-            <br>
-            <input type="datetime-local"  
-            formControlName="Date"
-      
-            class="form-control w"
-             
+          </td>
+          <td >
+            <h4 class="pt">{{'app.Date Mailing'|translate}}  <span class="obligatoire">*</span></h4>
+
+            <input type="datetime-local"
+                   formControlName="Date"
+
+                   class="form-control w pinput"
+
 
             >
             <br>
             <br>
-            <small  *ngIf="profileForm.get('Date').invalid && profileForm.get('Date').touched" class="text-danger">Date is Required</small>
+            <small *ngIf="profileForm.get('Date').invalid && profileForm.get('Date').touched" class="text-danger">Date
+              is
+              Required</small>
+
+          </td>
+        </tr>
+        <tr><td>
+          <h4>{{'app.hour of maling'|translate}} <span class="obligatoire">*</span></h4>
+
+
+          <input type="time" class="form-control w"
+                 formControlName="Time"
+          >
+          <br>
+          <br>
+          <small *ngIf="profileForm.get('Time').invalid && profileForm.get('Time').touched" class="text-danger">Time is
+            Required</small>
+
+        </td>
+          <td >
+
+          <h4 class="pt">{{'app.Mailing subject'|translate}} <span class="obligatoire">*</span></h4>
+
+          <input class="form-control w pinput" type="text" name="textera" formControlName="Objet" cols="30" rows="2">
+
+          <br>
+
+          <br>
+          <small *ngIf="profileForm.get('Objet').invalid && profileForm.get('Objet').touched" class="text-danger">Objet
+            is Required</small>
+
+          </td>
+          </tr>
+       <tr><td >
+          <h4 >File</h4>
+
+          <input class="form-control w " (change)="fileProgress($event) " type="file" formControlName="File"
+                 accept=".pdf,.png,.jpg,.docx,.pptx" name="textera" id="" cols="30" rows="2">
+
+          <br>
+
+          <br>
+       </td></tr></table>
+        <div class="text-center">
+          <button type="submit" [disabled]="profileForm.invalid"
+                  class="btn btn-primary my-4">{{'app.Send Email'|translate}}</button>
+        </div>
+      </form>
 
     </div>
-            <div class="form-group">
-            <h4>Heur  Mailing <span class="obligatoire">*</span></h4>
-            <br>
 
-            <input type="time"    class="form-control w"
-             formControlName="Time"             
-            >
-            <br>
-            <br>
-            <small  *ngIf="profileForm.get('Time').invalid && profileForm.get('Time').touched" class="text-danger">Time is Required</small>
+  </div>
 
-            </div>
-            <div class="form-group">
-            <h4>Objet de  Mailing <span class="obligatoire">*</span></h4>
-            <br>
-
-            <input class="form-control w" type="text" name="textera" formControlName="Objet" cols="30" rows="2">
-
-            <br>
-
-            <br>
-            <small  *ngIf="profileForm.get('Objet').invalid && profileForm.get('Objet').touched" class="text-danger">Objet is Required</small>
-
-            </div>
-            <div class="form-group">
-            <h4>File</h4>
-            <br>
-
-            <input class="form-control w" (change)="fileProgress($event) " type="file" formControlName="File" accept=".pdf,.png,.jpg,.docx,.pptx" name="textera" id="" cols="30" rows="2">
-
-            <br>
-
-            <br>
-            </div>
-            <div class="text-center">
-                <button type="submit" [disabled]="profileForm.invalid"  class="btn btn-primary my-4">Send Email</button>
-              </div>
-        </form>
-
-           </div>
- 
-         </div>
 </div>
+<style>
+
+  .pt {
+    font: 400 15px/24px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
+    margin: 0 0 16px;
+    margin-left: 48px;
+  }
+.pi{
+  margin-left: 80px;
+
+}.pfile{
+  margin-left: 80px;
+   width: 200px;
+}
+
+  .pinput {
+    width: 200px;
+    margin-left: 48px;
+  }
+</style>

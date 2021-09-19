@@ -1,50 +1,63 @@
 {
-    "app":{
-        "title":"Francais",
-        "Dashboards":"Dashboards",
-         "Send Mailing":"Send Mailing",
-        "Mailing":"Mailing",
-        "Sms":"Sms",
-        "Maps":"Maps",
-        "Notifications":"Notifications",
-        "User Profile":"User Profile",
-        "You have":"You have", 
-        "View all":"View all",
-        "Welcome!":"Welcome!",
-        "My profile":"My profile",
-
-        "Logout":"Logout",
-        "Name is Required":"Name is Required",
-        "Phone":"Phone",
-
-        "Password is Required":"Password is Required",
-
-        "Roles is Required":"Roles is Required",
-
-        "Add Employes":"Add Employes",
-
-        "List of Employees":"List of Employees",
-
-        "Delete Employes":"Delete Employes ",
-
-        "DELETE":"DELETE",
-        "UPDATE":"UPDATE",
-        "List Admin":"List Admin",
-        "List Projet":"List Project",
-        "List Client":"Client List",
-        "Managing Discussions":"Managing Discussions"
-
-
-
-
-     
-
-
-
-    
-
-       
-
-
-    }
+  "app": {
+    "title": "Francais",
+    "Dashboards": "Dashboards",
+    "Send Mailing": "Send Mailing",
+    "Mailing": "Mailing",
+    "Sms": "Sms",
+    "Maps": "Maps",
+    "Notifications": "Notifications",
+    "User Profile": "User Profile",
+    "You have": "You have",
+    "View all": "View all",
+    "Welcome!": "Welcome!",
+    "My profile": "My profile",
+    "Logout": "Logout",
+    "Name is Required": "Name is Required",
+    "Phone": "Phone is Required",
+    "Password is Required": "Password is Required",
+    "Roles is Required": "Roles is Required",
+    "Add Employes": "Add Employes",
+    "List of Employees": "List of Employees",
+    "Delete Employes": "Delete Employes ",
+    "DELETE": "DELETE",
+    "UPDATE": "UPDATE",
+    "List Admin": "List Admin",
+    "List Projet": "List Project",
+    "List Client": "Client List",
+    "Managing Discussions": "Managing Discussions",
+    "List of Users": "List of Users",
+    "List of Employers": "List of Employers",
+    "Mail statistics": "Mail statistics",
+    "name": "Name",
+    "Email": "Email",
+    "phone": "Phone",
+    "Password": "Password",
+    "List Employes": "List Employes",
+    "Address name": "Address Name",
+    "to": "To.",
+    "Description Mailing": "Description Mailing",
+    "Date Mailing": "Date Mailing",
+    "hour of maling": "hour of maling",
+    "Mailing subject": "Mailing subject",
+    "Send Email": "Send Email",
+    "Message send": "Message send",
+    "Subject":"Subject",
+    "Description": "Description",
+    "Add Client": "Add Client",
+    "List Clients": "List Clients",
+    "Project name": "Project name",
+    "Customer email": "Customer email",
+    "add project": "add project",
+    "List Project": "List Project",
+    "Room Name": "Room Name",
+    "Employer Email": "Employer Email",
+    "Add room": "Add room",
+    "List Room ": "List Room ",
+    "Edit profil": "Edit profil" ,
+    "User information": "User information",
+    "update picture": "update picture",
+    "Username": "Username",
+    "Number": "Number"
+  }
 }

@@ -1,46 +1,63 @@
 {
-    "app":{
-        "title":"Francais",
-        "Dashboards":"Tableaux de bord",
-         "Send Mailing":"Envoyer un publipostage",
-        "Mailing":"Envoi postal",
-        "Sms":"Sms",
-        "Maps":"Plans",
-        "Notifications":"Notifications",
-        "User Profile":"Profil de l'utilisateur",
-        "You have":"Tu as", 
-        "View all":"Voir tout",
-        "Welcome!":"Bienvenue!",
-        "My profile":"Mon profil",
-        "Logout":"Se déconnecter",
-        "Name is Required":"Le nom est requis",
-        "Phone":"le téléphone est obligatoire",
-
-        "Password is Required":"Mot de passe requis",
-
-        "Roles is Required":"Rôles est requis",
-
-        "Add Employes":"Ajouter des employés",
-
-        "List of Employees":"Liste des Employés",
-
-        "Delete Employes":"Supprimer des employés ",
-
-        "DELETE":"EFFACER",
-        "UPDATE":"Modifier les employés",
-        
-        "List Admin":"Liste Admin",
-        "List Projet":"Liste Projet",
-        "List Client":"List Client",
-        "Managing Discussions":"Gestion Des discussions"
-     
-
-
-
-    
-
-       
-
-
-    }
+  "app": {
+    "title": "Francais",
+    "Dashboards": "Tableaux de bord",
+    "Send Mailing": "Envoyer un publipostage",
+    "Mailing": "Envoi postal",
+    "Sms": "Sms",
+    "Maps": "Plans",
+    "Notifications": "Notifications",
+    "User Profile": "Profil de l'utilisateur",
+    "You have": "Tu as",
+    "View all": "Voir tout",
+    "Welcome!": "Bienvenue!",
+    "My profile": "Mon profil",
+    "Logout": "Se déconnecter",
+    "Name is Required": "Le nom est requis",
+    "Phone": "le téléphone est obligatoire",
+    "Password is Required": "Mot de passe requis",
+    "Roles is Required": "Rôles est requis",
+    "Add Employes": "Ajouter des employés",
+    "List of Employees": "Liste des Employés",
+    "Delete Employes": "Supprimer des employés ",
+    "DELETE": "EFFACER",
+    "UPDATE": "Modifier les employés",
+    "List Admin": "Liste Admin",
+    "List Projet": "Liste Projet",
+    "List Client": "List Client",
+    "Managing Discussions": "Gestion Des discussions",
+    "List of Users": "Liste des utilisateurs",
+    "List of Employers": "Liste des Employeurs",
+    "Mail statistics": "Statistiques de messagerie",
+    "name": "Nom",
+    "Email": "E-mail",
+    "phone": "Telephone",
+    "Password": "Mot de passe",
+    "List Employes": "Liste Employes",
+    "Address name": "Nom de l'adresse",
+    "to":"A.",
+    "Description Mailing": "Description Envoi postal",
+    "Date Mailing": "Date d'envoi",
+    "hour of maling": "heure de maling",
+    "Mailing subject": "Objet de l'envoi",
+    "Send Email": "Envoyer un e-mail",
+    "Message send": "Message envoyé",
+    "Subject":"Sujet",
+    "Description": "Description",
+    "Add Client": "Ajouter Client",
+    "List Clients": "Liste Clients",
+    "Project name": "Nom du projet",
+    "Customer email": "Email client",
+    "add project": "Ajouter projet",
+    "List Project": "Liste Projet",
+    "Room Name": "Nom de la salle",
+    "Employer Email": "Courriel de l'employeur",
+    "Add room": "Ajoute Salon",
+    "List Room ": "Liste salon",
+    "Edit profil": "Modifier profile",
+    "User information": "Informations de l'utilisateur",
+    "update picture": "Modifier Image",
+    "Username": "Nom d'utilisateur",
+    "Number": "Numero"
+  }
 }
