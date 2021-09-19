@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('isLoginAdmin','true');
         localStorage.setItem('isLoginSupperAdmin','false');
 
-      } else if (role == 'Employer') {
+      } else if (role == 'Employes') {
         this.router.navigate(['/dashbored']);
         localStorage.setItem('isLoginClient','false');
         localStorage.setItem('isLoginEmployer','true');
@@ -79,7 +79,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('isLoginAdmin','false');
         localStorage.setItem('isLoginSupperAdmin','true');
       }
-      this.toastr.success("Welcom");
+     
     }
     else{
       this.toastr.error("Please Verifier your Email");

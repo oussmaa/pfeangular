@@ -15,3 +15,56 @@
 .w{
     width: 200px;
 }
+.msg_send_btn {
+    background-color: #3fe8f4;
+    margin: auto;
+    padding: 1px;
+       border: medium none;
+       color: #fff;
+      cursor: pointer;
+      
+      margin-left: 200px;
+       
+    
+      height: 30px;
+   
+   
+      border-radius: 15%;
+  
+      width: 30px;
+   
+   
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    position: relative;
+  }
+  
+  ul li:hover {
+    background-color: #3fe8f4;
+    color: white;
+  }
+  
+  .close {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    padding: 12px 16px;
+    transform: translate(0%, -50%);
+  }
+  
+  

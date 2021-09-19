@@ -16,7 +16,7 @@ Let's chat? - Online On {{username}}</div>
         <li class="message"*ngFor="let message of messages1" >
             <div
             *ngIf="
-            message.idsend !== message.idsend;
+            message.idsend !== id;
              
             then incoming_msg;
             else outgoing_msg

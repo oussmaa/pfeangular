@@ -10,9 +10,10 @@ import { NgxUiLoaderService } from "ngx-ui-loader"; // Import NgxUiLoaderService
   styleUrls: ['./sms.component.css']
 })
 export class SmsComponent implements OnInit {
+  emailtest!:string;
 
   mobnumPattern = "^((\\+216-?)|0)?[0-9]{8}$"; 
-
+  emailad:Array<string> =[];
  profileForm!: FormGroup;
 
   constructor(private service :SendMailService,private toaster:ToastrService,private ngxService: NgxUiLoaderService, ) { }
@@ -24,8 +25,27 @@ export class SmsComponent implements OnInit {
     
     });
   }
-  onSubmit()
+
+  close(msg:string) {
+    const index: number = this.emailad.indexOf(msg);
+    if (index !== -1) {
+        this.emailad.splice(index, 1);
+    }      
+    console.log(this.emailad)  
+  }
+  AddmailList(emaila:string)
   {
+  
+  this.emailad.push(emaila)
+  console.log(this.emailad)
+    this.emailtest=emaila;
+  
+  }
+
+
+  onSubmit()
+  { if(this.emailad.length==0)
+    {
 this.ngxService.start();
     this.service.SendMessagePhone("+216"+this.profileForm.value.Phone,this.profileForm.value.Description).subscribe
     (
@@ -45,5 +65,29 @@ err=>{
 
     )
   }
+ 
+  else{
+    for (let i = 0; i < this.emailad.length; i++) {
 
+    this.ngxService.start();
+    this.service.SendMessagePhone("+216"+this.emailad[i],this.profileForm.value.Description).subscribe
+    (
+data =>
+{ this.ngxService.stop();
+  this.toaster.success("Message Send");
+  this.ngOnInit();
+  
+},
+err=>{
+  this.toaster.error("Message Not Send");
+
+
+  this.ngxService.stop();
+
+}
+
+    )
+  }
+}
+  }
 }

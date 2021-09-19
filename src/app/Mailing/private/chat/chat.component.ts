@@ -55,7 +55,7 @@ this.service.getroombyid(this.id2).subscribe(
   data=>{
 this.Employes=data;
 this.username=data.name;
- //this.getMessage(this.username)
+  this.getMessage(this.username)
   },
   err=>{
 
@@ -63,7 +63,6 @@ this.username=data.name;
 )
  
 
-this.GetMessage();
   }
   sendMessage() {
     if(this.form.newMessage!=null)
@@ -80,6 +79,8 @@ this.GetMessage();
 
  
     this.chat.sendMessage(obj);
+    
+this.GetMessage();
     this.chat.postMessage(this.form.newMessage,this.name,this.name,this.username,this.id,this.myDate).subscribe(
       data => {
      

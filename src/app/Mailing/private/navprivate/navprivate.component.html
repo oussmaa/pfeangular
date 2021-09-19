@@ -83,16 +83,22 @@
               </li>
               
           
-               <li class="nav-item   let  " *ngIf="admin1 && supper1">
+               <li class="nav-item   let  " *ngIf="admin1">
                 <a class="nav-link hob text-black " routerLink="/dashbored/addclient"  role="button"    >
                   <i class="ni ni-single-02 text-blue"  style="font-size: 1em;"></i>       
                            <span class="pa"> {{'app.List Client' | translate}}</span>
                 </a>
                </li>
-               <li class="nav-item   let  ">
+               <li class="nav-item   let  " *ngIf="admin1">
                 <a class="nav-link hob text-black " routerLink="/dashbored/discussion"  role="button"    >
                   <i class="ni ni-chat-round text-blue"  style="font-size: 1em;"></i>       
                            <span class="pa"> {{'app.Managing Discussions' | translate}}</span>
+                </a>
+               </li>
+               <li class="nav-item   let  " >
+                <a class="nav-link hob text-black " routerLink="/dashbored/choseroom"  role="button"    >
+                  <i class="ni ni-chat-round text-blue"  style="font-size: 1em;"></i>       
+                           <span class="pa"> Go discute</span>
                 </a>
                </li>
             </ul>

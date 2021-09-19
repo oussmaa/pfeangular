@@ -83,10 +83,61 @@ console.log(this.emailad)
 
 
 
-  {  if(this.emailad.length==null)
+  {  if(this.emailad.length==0)
     {
-      console.log("hahaahah");
+      var that = this;
+
+      that.ngxService.start()
+   
+   
+      let obj: Message = {
+        
+        name: this.profileForm.value.Name,
+        description: this.profileForm.value.Description,
+        subject: this.profileForm.value.Objet,
+        date:this.profileForm.value.Date,
+        email: this.profileForm.value.Email,
+        time:this.profileForm.value.Time,
+        sendTo:this.profileForm.value.Email,
+        file:this.profileForm.value.File,
+      };
+  
+   
+      this.socket.sendMessage(obj);
+   
+   
+      this.service.GetUserById(this.id).subscribe(
+  
+        data=>{
+                 this.user=data
+                 this.email=data.email;
+                 this.sentNotif(this.email,this.profileForm.value.Email);
+                 this.ser.SendMaillSansfile(this.profileForm.value.Name,this.profileForm.value.Description,this.profileForm.value.Objet,
+                  this.profileForm.value.Date,this.profileForm.value.Email,this.profileForm.value.Time,this.email,this.profileForm.value.File).subscribe(
+                    data => {
+                      this.toestar.success("Send Sucécfule");
+                 this.ngOnInit();
+  
+                 that.ngxService.stop()
+                
+                    },
+                    err => {
+                      this.errorMessage = err.error.message;
+                      that.ngxService.stop()
+                    }
+                
+                
+                
+                    );
+               
+        },
+        err=>
+        {
+      
+        }
+      )
     }
+    else{
     for (let i = 0; i < this.emailad.length; i++) {
     
     var that = this;
@@ -141,7 +192,7 @@ console.log(this.emailad)
       }
     )
     }
-
+  }
   }
   sentNotif(email1:string,email:string)
   {

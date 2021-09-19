@@ -14,7 +14,20 @@
             <br>
 
             <input type="tel"  class="form-control w" formControlName="Phone" cols="30" rows="2">
+            <button class="msg_send_btn" (click)="AddmailList(this.profileForm.value.Phone)"   type="button">
+                <i class="ni ni-fat-add">
 
+                </i>     
+               </button>
+               <br>
+               <ul>
+               
+                <li style="list-style-type:none" *ngFor="let em of emailad ">{{em}}<span (click)="close(em)" class="close">&times;</span></li>
+          
+               </ul>
+        
+
+        <br>
             <br>
 
             <br>
