@@ -45,25 +45,39 @@ export class LoginComponent implements OnInit {
      localStorage.setItem('user_id',res.id);
       const role =  res.roles;
 
-      if (role === 'Client') {
+      if (role == 'Client') {
         this.router.navigate(['/dashbored'], {relativeTo: this.route});
-        this.ser.isLoginClient=true;
+        localStorage.setItem('isLoginClient','true');
+        localStorage.setItem('isLoginEmployer','false');
+        localStorage.setItem('isLoginAdmin','false');
+        localStorage.setItem('isLoginSupperAdmin','false');
+
+       
+     
 
       } 
       
-      else if (role === 'Admin') {
-        this.router.navigate(['/dashboard']);
-        this.ser.isLoginAdmin=true;
-
-      } else if (role === 'Employer') {
+      else if (role == 'Admin') {
         this.router.navigate(['/dashbored']);
-        this.ser.isLoginEmployer=true;
+        localStorage.setItem('isLoginClient','false');
+        localStorage.setItem('isLoginEmployer','false');
+        localStorage.setItem('isLoginAdmin','true');
+        localStorage.setItem('isLoginSupperAdmin','false');
+
+      } else if (role == 'Employer') {
+        this.router.navigate(['/dashbored']);
+        localStorage.setItem('isLoginClient','false');
+        localStorage.setItem('isLoginEmployer','true');
+        localStorage.setItem('isLoginAdmin','false');
+        localStorage.setItem('isLoginSupperAdmin','false');
 
       }
-      else if (role === 'SupperAdmin') {
+      else if (role == 'SupperAdmin') {
         this.router.navigate(['/dashbored']);
-        this.ser.isLoginSupperAdmin=true;
-
+        localStorage.setItem('isLoginClient','false');
+        localStorage.setItem('isLoginEmployer','false');
+        localStorage.setItem('isLoginAdmin','false');
+        localStorage.setItem('isLoginSupperAdmin','true');
       }
       this.toastr.success("Welcom");
     }

@@ -44,7 +44,7 @@ export class SendMailService {
     }, this.httpOptions);
 }
 SendMaillSansfile(name: string, description: string, subject: string,date:Date, email: string,time:String,sendTo:string,file:string): Observable<any> {
-  return this.httpClient.post("http://localhost:8065/api/mail/sendmail", {
+  return this.httpClient.post("http://localhost:8065/api/mail/sendmailsansfile", {
     name,
     description,
     subject,
@@ -52,7 +52,7 @@ SendMaillSansfile(name: string, description: string, subject: string,date:Date, 
     email,
     time ,
     sendTo,
-    file:'C:/Users/Administrator/Desktop/1.pdf'
+    file:''
   
  
   }, this.httpOptions);

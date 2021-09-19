@@ -1,21 +1,5 @@
-.menu {
-    position: fixed;
-    right: 0;
-   padding: auto;
-    top: 80%;
-    width: 5em;
-     margin : 20px;
-  }
-  .menu1 {
-    position: fixed;
-     
-    margin : 20px;
-    top: 80%;
-    width: 7em;
  
-  }
-  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
- 
+  
  
 #click{
   display: none;
@@ -79,32 +63,16 @@ label{
   font-size: 17px;
   font-weight: 500;
 }
-.chat-box form{
-  padding: 10px 15px;
-  margin: 20px 0;
-  border-radius: 25px;
-  border: 1px solid lightgrey;
-}
+ 
 .chat-box form .field{
-  height: 200px;
-  width: 200%;
+  height: 100px;
+  width: 20%;
   margin-top: 20px;
 }
 .chat-box form .field:last-child{
   margin-bottom: 15px;
 }
-form .field input,
-form .field button,
-form .textarea textarea{
-  width: 100%;
-  height: 100%;z-index: 1;
-  padding-left: 20px;
-  border: 1px solid lightgrey;
-  outline: none;
-  border-radius: 25px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
+ 
 form .field input:focus,
 form .textarea textarea:focus{
   border-color: bg-gradient-info;
@@ -147,8 +115,10 @@ form .textarea textarea:focus::placeholder{
  
 
 .container {
-	max-width: 270px;
-	margin: auto;
+	max-width: 670px;
+    max-height: 400px;
+    
+    margin: auto;
 }
 
 img {
@@ -270,7 +240,7 @@ img {
 }
 
 .received_msg {
- 	padding: 0 0 0 10px;
+ 
 	vertical-align: top;
  }
 
@@ -295,8 +265,8 @@ img {
 
 .mesgs {
  
-	padding: 30px 15px 0 25px;
-	width: 60%;
+	padding: 30px 15px 0 105px;
+	width: 200%;
 }
 
 .sent_msg p {
@@ -322,24 +292,29 @@ margin-left: 200px;
 
 .outgoing_msg {
 	overflow: hidden;
-	margin: 26px 0 26px;
+	margin: 20px 0 20px;
 }
 
 .sent_msg {
 	float: right;
-	width: 46%;
+    margin-right: 50px;
+	width: 36%;
 }
 
 .input_msg_write input {
- 	color: #fff;
-  background-color: #1974D2;
-  text-decoration: #fff;
-	font-size: 14px;
-  border-radius: 8%;
-	min-height: 80px;
-	height: 20px;
-	padding: 20px;
+    color: #fff;
+    background-color: #1974D2;
+    font-size: 14px;
+   
+    min-height: 30px;
+    width: 580px;
+    padding: 20px;
+    min-width: 20px;
+    margin-top: 10px;
+    border-radius: 10%;
+    border-color: white;
 
+    outline: none;
 	 
   
 }
@@ -355,6 +330,9 @@ margin-left: 200px;
 
 
 }
+.kaj {
+	overflow: hidden; /* Hide scrollbars */
+  }
 .smallcolor{
 	color: #F4D03F;
 }
@@ -365,27 +343,35 @@ margin-left: 200px;
  	border: medium none;
  	color: #fff;
 	cursor: pointer;
+    
+
 	font-size: 15px;
 	min-height: 20px;
-	height: 40px;
-	position: absolute;
+	height: 60px;
+  padding: 20px;
  
-	border-radius: 8%;
+	border-radius: 15%;
 
-	width: 60px;}
+	width: 60px;
+    min-height: 30px;
+  
+    min-width: 20px;
+    margin-top: 10px;
+}
 
 .messaging {
 	padding: 0 0 50px 0;
 }
 
 .msg_history {
-	height: 220px;
+	height: 340px;
 	overflow-y: auto;
- 	width: 220px;
+ 	width: 800px;
 	 padding-right: 20px;
 }
 
 .message {
 	list-style-type: none;
 	right: 0;
+ 
 }

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Notif } from '../Model/Notif';
 import { Projet } from '../Model/Projet';
 import { Room } from '../Model/Room';
 import { User } from '../Model/User';
@@ -10,10 +11,7 @@ import { User } from '../Model/User';
 })
 export class AuthentificationService {
   
-  isLoginClient = false;
-  isLoginEmployer = false;
-  isLoginAdmin = false;
-  isLoginSupperAdmin = false;
+
 
 
 
@@ -130,10 +128,14 @@ logout()
 {
 localStorage.removeItem("accessToken");
 localStorage.removeItem("user_id");
-  this.isLoginClient = false;
-  this.isLoginEmployer = false;
-  this.isLoginAdmin = false;
-  this.isLoginSupperAdmin = false;
+localStorage.removeItem("isLoginAdmin");
+localStorage.removeItem("isLoginEmployer");
+localStorage.removeItem("isLoginClient");
+localStorage.removeItem("isLoginSupperAdmin");
+
+
+ 
+  
 
  }
 getToken() {
@@ -215,6 +217,25 @@ getcountbyroles(roles:string): Observable<any> {
     }, this.httpOptions);
     
   }
+  
+  saveNotif(text:string,sendid:string,sendTo:string,date:Date): Observable<any> {
+    return this.httpClient.post("http://localhost:8065/api/projet/savenotif", {
+      
+      text,
+      sendid,
+      sendTo,
+      date
+   
+    }, this.httpOptions);
+    
+  }
+
+  getNotif(email:string): Observable<any> {
+    return this.httpClient.get<Notif>("http://localhost:8065/api/projet/getemailnotif/"+email );
+     }
+
+
+
 
   getProjetByemail(email:string): Observable<any> {
     return this.httpClient.get<Projet>("http://localhost:8065/api/projet/getprojetbyemail/"+email );
@@ -259,7 +280,9 @@ getcountbyroles(roles:string): Observable<any> {
       getbyidadin(idadmin:string): Observable<any> {
         return this.httpClient.get<Room>("http://localhost:8065/api/projet/getrommadmin/"+idadmin );
          }
-
+         getbyiemailclient(email:string): Observable<any> {
+          return this.httpClient.get<Room>("http://localhost:8065/api/projet/getroombyclient/"+email );
+           }
 
 
          deleteroomdis(id:string): Observable<any> {
@@ -280,4 +303,9 @@ getcountbyroles(roles:string): Observable<any> {
           }, this.httpOptions);
           
         }
+
+
+        getroombyid(id:string): Observable<any> {
+          return this.httpClient.get<Room>("http://localhost:8065/api/projet/getroombyid/"+id );
+           }
 }

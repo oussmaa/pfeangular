@@ -16,8 +16,11 @@ import { AuthentificationService } from '../../shared/Service/authentification.s
 })
 export class SendmailComponent implements OnInit {
   public user!: User;
+  emailad:Array<string> =[];
 id:any;
+emailtest!:string;
 fileData!: File;
+date=new Date();
   constructor(private service:AuthentificationService,private ngxService: NgxUiLoaderService,private socket:SocketService,private toestar:ToastrService, private router: Router,private ser:SendMailService,private route: ActivatedRoute) {
 
    }
@@ -57,13 +60,34 @@ email:any;
    
      
 }
+
+ 
+close(msg:string) {
+  const index: number = this.emailad.indexOf(msg);
+  if (index !== -1) {
+      this.emailad.splice(index, 1);
+  }      
+  console.log(this.emailad)  
+}
+AddmailList(emaila:string)
+{
+
+this.emailad.push(emaila)
+console.log(this.emailad)
+  this.emailtest=emaila;
+
+}
+
+
   onSubmit()
 
 
 
-  {  
- 
-    
+  {  if(this.emailad.length==null)
+    {
+      console.log("hahaahah");
+    }
+    for (let i = 0; i < this.emailad.length; i++) {
     
     var that = this;
 
@@ -76,26 +100,28 @@ email:any;
       description: this.profileForm.value.Description,
       subject: this.profileForm.value.Objet,
       date:this.profileForm.value.Date,
-      email:this.profileForm.value.Email,
+      email: this.emailad[i],
       time:this.profileForm.value.Time,
-      sendTo:this.profileForm.value.Email,
+      sendTo:this.emailad[i],
       file:this.profileForm.value.File,
     };
 
  
     this.socket.sendMessage(obj);
-    this.toestar.success("Send Succée");
+ 
  
     this.service.GetUserById(this.id).subscribe(
 
       data=>{
                this.user=data
                this.email=data.email;
+               this.sentNotif(this.email,this.emailad[i]);
                this.ser.SendMaillSansfile(this.profileForm.value.Name,this.profileForm.value.Description,this.profileForm.value.Objet,
-                this.profileForm.value.Date,this.email,this.profileForm.value.Time,this.profileForm.value.Email,this.profileForm.value.File).subscribe(
+                this.profileForm.value.Date,this.emailad[i],this.profileForm.value.Time,this.email,this.profileForm.value.File).subscribe(
                   data => {
-                 
+                    this.toestar.success(this.emailad[i]);
                this.ngOnInit();
+
                that.ngxService.stop()
               
                   },
@@ -114,8 +140,18 @@ email:any;
     
       }
     )
- 
+    }
 
+  }
+  sentNotif(email1:string,email:string)
+  {
+    this.service.saveNotif("Nouvelle Notification de Email", email1,email,this.date).subscribe(
+      dta=>{
+
+      },err=>{
+
+      }
+    )
   }
 
 }

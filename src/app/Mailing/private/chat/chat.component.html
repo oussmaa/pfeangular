@@ -1,62 +1,67 @@
 
- 
  <app-navprivate></app-navprivate>
  <ngx-ui-loader></ngx-ui-loader>
  <br>
  
- <div class="mar pad ">
+ <div class="mar pad kaj">
    
-    <div class="chat2  cdf bg-gradient-info">
+    <div class="chat2  kaj cdf bg-gradient-info">
        
       <div class="head-text  bg-gradient-info">
-Let's chat? - Online</div>
+Let's chat? - Online On {{username}}</div>
 <div class="chat-box">
   <div  class="container ">
   <div class="mesgs">
     <div class="msg_history">
-      <li class="message" >
-        <div
-      
-        ></div>
-        <ng-template #incoming_msg>
-          <div class="incoming_msg">
-            <div class="incoming_msg_img">
-              <img
-                src="https://i.imgur.com/k2PZLZa.png"
-                alt="User avatar"
-              />
-            </div>
-            <div class="received_msg">
-              <div class="received_withd_msg">
-                <p>qqqqqq</p>
-              </div>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template #outgoing_msg>
-          <div class="outgoing_msg">
-            <div class="sent_msg">
-              <small class="smallcolor"> </small>
-              <p>hello</p>
-              
+        <li class="message"*ngFor="let message of messages1" >
+            <div
+            *ngIf="
+            message.idsend !== message.idsend;
+             
+            then incoming_msg;
+            else outgoing_msg
+          "
+            ></div>
+            <ng-template #incoming_msg>
+              <div class="incoming_msg">
+                <div class="incoming_msg">
+                    <h3 class="text-white">{{message.avatar}}</h3>
+                </div>
+                 
+                <small class="smallcolor">{{message.date  | date:'yyyy-MM-dd'}}</small>
 
-            </div>
-          </div>
-        </ng-template>
-      </li>
+                <div class="received_msg">
+                  <div class="received_withd_msg">
+                    <p>{{ message.text }}</p> 
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template #outgoing_msg>
+              <div class="outgoing_msg">
+                <div class="sent_msg">
+                  <small class="smallcolor">{{message.date  | date:'yyyy-MM-dd'}}</small>
+                  <p>{{ message.text }}</p>
+                  
+    
+                </div>
+              </div>
+            </ng-template>
+          </li>
     </div>
  
   </div>
            <div class="type_msg">
-              <form class="input_msg_write" name="form" #f="ngForm"  >
+              <form class="input_msg_write" name="form" #f="ngForm" (ngSubmit)="sendMessage()" >
                 <input
                   type="text"   
                   class=" text-white "
                   placeholder="Type a message" name="newMessage"
-                 
+                  [(ngModel)]="form.newMessage"
+                  #newMessage="ngModel"
                 />
                 <button class="msg_send_btn" type="submit">
-                  <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                    <i class="ni ni-send"></i>
                 </button>
               </form>
             </div>
