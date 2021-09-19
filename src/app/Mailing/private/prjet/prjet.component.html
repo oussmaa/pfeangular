@@ -3,13 +3,13 @@
 <br>
 
 <div class="mar pad ">
- 
+
     <div class="card card-frame">
         <div class="card-body">
 
 <form   [formGroup]="profileForm"  (ngSubmit)="onSubmit()"   >
     <div class="form-group">
-            <h4>Nom De Projet <span class="obligatoire">*</span></h4>
+            <h4>{{'app.Project name'|translate}}<span class="obligatoire">*</span></h4>
             <br>
 
             <input type="text"  class="form-control w" formControlName="Name" cols="30" rows="2">
@@ -21,7 +21,7 @@
 
     </div>
     <div class="form-group">
-        <h4> Client  Email<span class="obligatoire">*</span>
+        <h4>{{'app.Customer email'|translate}}<span class="obligatoire">*</span>
         </h4>
         <br>
 
@@ -47,11 +47,11 @@
 
 </div>
 <div class="text-center">
-    <button type="submit"  [disabled]="profileForm.invalid"  class="btn btn-primary my-4">Ajout Projet</button>
+    <button type="submit"  [disabled]="profileForm.invalid"  class="btn btn-primary my-4">{{'app.add project'|translate}}</button>
   </div>
 </form>
 <div class="text-center">
-    <button type="button"  routerLink="/dashbored/listprojet" class="btn btn-primary my-4">List Projet</button>
+    <button type="button"  routerLink="/dashbored/listprojet" class="btn btn-primary my-4">{{'app.List Project'|translate}}</button>
   </div>
 </div>
 </div>

@@ -3,13 +3,13 @@
 <br>
 
 <div class="mar pad ">
- 
+
     <div class="card card-frame">
         <div class="card-body">
 
 <form   [formGroup]="profileForm"  (ngSubmit)="onSubmit()"   >
     <div class="form-group">
-            <h4>Nom De Room <span class="obligatoire">*</span></h4>
+            <h4>{{'app.Room Name'|translate}}<span class="obligatoire">*</span></h4>
             <br>
 
             <input type="text"  class="form-control  " formControlName="Name"  >
@@ -21,7 +21,7 @@
 
     </div>
     <div class="form-group">
-        <h4> Client  Email<span class="obligatoire">*</span>
+        <h4> {{'app.Customer email'|translate}}<span class="obligatoire">*</span>
         </h4>
         <br>
 
@@ -35,7 +35,7 @@
 
 </div>
 <div class="form-group">
-    <h4> Employer  Email<span class="obligatoire">*</span>
+    <h4> {{'app.Employer  Email'|translate}}<span class="obligatoire">*</span>
     </h4>
     <br>
 
@@ -48,13 +48,13 @@
     <br>
 
 </div>
-, 
+,
 <div class="text-center">
-    <button type="submit"  [disabled]="profileForm.invalid"  class="btn btn-primary my-4">Ajout Room</button>
+    <button type="submit"  [disabled]="profileForm.invalid"  class="btn btn-primary my-4">{{'app.Add room'|translate}}</button>
   </div>
 </form>
 <div class="text-center">
-    <button type="button"  routerLink="/dashbored/listroom" class="btn btn-primary my-4">List Room</button>
+    <button type="button"  routerLink="/dashbored/listroom" class="btn btn-primary my-4">{{'app.List Room '|translate}}</button>
   </div>
 </div>
 </div>

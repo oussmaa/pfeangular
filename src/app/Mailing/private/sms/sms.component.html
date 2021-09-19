@@ -4,13 +4,13 @@
 <br>
 
 <div class="mar pad ">
- 
+
     <div class="card card-frame">
         <div class="card-body">
 
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-            <h4>Phone <span class="obligatoire">*</span></h4>
+            <h4>{{'app.phone'|translate}} <span class="obligatoire">*</span></h4>
             <br>
 
             <input type="tel"  class="form-control w" formControlName="Phone" cols="30" rows="2">
@@ -18,7 +18,7 @@
             <br>
 
             <br>
-            <small  *ngIf="profileForm.get('Phone').invalid && profileForm.get('Phone').touched" class="text-danger">Phone is Required</small>
+            <small  *ngIf="profileForm.get('Phone').invalid && profileForm.get('Phone').touched" class="text-danger">{{'app.Phone'|translate}}</small>
 
     </div>
     <div class="form-group">
@@ -34,7 +34,7 @@
 
 </div>
 <div class="text-center">
-    <button type="submit" [disabled]="profileForm.invalid"  class="btn btn-primary my-4">Send Message</button>
+    <button type="submit" [disabled]="profileForm.invalid"  class="btn btn-primary my-4">{{'app.Message send'|translate}}</button>
   </div>
 </form>
 </div>
