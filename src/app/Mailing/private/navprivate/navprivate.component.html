@@ -15,7 +15,7 @@
      
           <div class="collapse navbar-collapse" id="sidenav-collapse-main">
              <ul class="navbar-nav">
-              <li class="nav-item let ">
+              <li class="nav-item let " *ngIf="admin1">
                 <a class="nav-link hob   text-black" routerLink="/dashbored"  role="button"    >
                   <i class="ni ni-shop text-primary"  style="font-size: 1em;"></i>
                   <span class="pa" >{{'app.Dashboards' | translate}}</span>
@@ -23,14 +23,14 @@
                
               </li>
             
-              <li class="nav-item let">
+              <li class="nav-item let"  *ngIf="admin1">
                 <a class="nav-link  hob text-black" routerLink="/dashbored/listemployer"  role="button"    >
                   <i class="ni ni-bullet-list-67"  style="font-size: 1em;"></i>      
                             <span class="pa" >{{'app.List of Employees' | translate}}</span>
                 </a>
                
               </li>
-              <li class="nav-item let">
+              <li class="nav-item let" >
                 <a class="nav-link hob  text-black"  routerLink="/dashbored/sendmail"  role="button"    >
                   <i class="ni ni-email-83 text-green" style="font-size: 1em;"></i> 
                      <span class="pa"> {{'app.Send Mailing' | translate}}</span>
@@ -66,7 +66,7 @@
                
               </li>
          
-              <li class="nav-item   let  ">
+              <li class="nav-item   let " *ngIf="supper1">
                 <a class="nav-link hob text-black " routerLink="/dashbored/addadmin"  role="button"    >
                   <i class="ni ni-active-40 text-blue"  style="font-size: 1em;"></i>       
                            <span class="pa"> {{'app.List Admin' | translate}}</span>
@@ -83,7 +83,7 @@
               </li>
               
           
-               <li class="nav-item   let  ">
+               <li class="nav-item   let  " *ngIf="admin1 && supper1">
                 <a class="nav-link hob text-black " routerLink="/dashbored/addclient"  role="button"    >
                   <i class="ni ni-single-02 text-blue"  style="font-size: 1em;"></i>       
                            <span class="pa"> {{'app.List Client' | translate}}</span>
@@ -137,7 +137,7 @@
                 <a class="nav-link"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <button   type="button" class=" souliner icon-button">
                     <span class="material-icons souliner souliner">notifications</span>
-                    <span   class="icon-button__badge souliner">0</span>
+                    <span   class="icon-button__badge souliner">{{test}}</span>
                   </button>
                 </a>
                 <div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
@@ -149,26 +149,23 @@
                   
                   <div class="px-3 py-3">
                     <h6 class="text-sm text-muted m-0">{{'app.You have' | translate}}
-                      <strong class="text-primary">13</strong> notifications.</h6>
+                      <strong class="text-primary">{{test}}</strong> notifications.</h6>
                   </div>
                   <!-- List group -->
                   <div class="list-group list-group-flush">
                     <a href="#!" class="list-group-item list-group-item-action">
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-                          <!-- Avatar -->
-                          <img alt="Image placeholder" src="../../assets/img/theme/team-1.jpg" class="avatar rounded-circle">
-                        </div>
-                        <div class="col ml--2">
+                      <div class="row align-items-center" *ngFor="let pro of Employes">
+                        
+                        <div class="col ml--2" >
                           <div class="d-flex justify-content-between align-items-center">
                             <div>
-                              <h4 class="mb-0 text-sm">John Snow</h4>
+                              <h4 class="mb-0 text-sm">{{pro.sendid}}</h4>
                             </div>
                             <div class="text-right text-muted">
-                              <small>2 hrs ago</small>
+                              <small>{{pro.date  | date:'yyyy-MM-dd'}}</small>
                             </div>
                           </div>
-                          <p class="text-sm mb-0">Let's meet at Starbucks at 11:30. Wdyt?</p>
+                          <p class="text-sm mb-0"> {{pro.text}}</p>
                         </div>
                       </div>
                     </a>
@@ -200,10 +197,10 @@
                 <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <div class="media align-items-center">
                     <span class="avatar avatar-sm rounded-circle">
-                      <img alt="Image placeholder" src="../../assets/img/profiled.jpg">
+                      <img alt="Image placeholder" [src]="fffff">
                     </span>
                     <div class="media-body  ml-2  d-none d-lg-block">
-                      <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
+                      <span class="mb-0 text-sm  font-weight-bold">{{name}}</span>
                     </div>
                   </div>
                 </a>

@@ -1,2 +1,19 @@
 <app-navprivate></app-navprivate>
 <ngx-ui-loader></ngx-ui-loader>
+
+
+
+<div class=" mar  pad ">
+<h1>List des Notifications</h1>
+
+<div class="card bg-gradient-default" *ngFor="let pro of Employes">
+    <div class="card-body">
+        <h3 class="card-title text-white">{{pro.sendTo}}</h3>
+        <blockquote class="blockquote text-white mb-0">
+            <p>{{pro.text}} de  </p><br>
+            <p>{{pro.sendid}}    </p>
+
+         </blockquote>
+    </div>
+</div>
+</div>

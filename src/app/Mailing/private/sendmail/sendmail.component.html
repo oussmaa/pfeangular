@@ -24,10 +24,20 @@
     </div>
     <div class="form-group">
         <h4>A .  <span class="obligatoire">*</span></h4>
-        <br>
+        
 
-        <input type="email"   class="form-control w" formControlName="Email" cols="30" rows="2">
+        <input type="email"   class="form-control w" formControlName="Email" cols="30" rows="2">  
+          <button class="msg_send_btn" (click)="AddmailList(this.profileForm.value.Email)"   type="button">
+                <i class="ni ni-fat-add">
 
+                </i>     
+               </button>
+               <br>
+               <ul>
+               
+                <li style="list-style-type:none" *ngFor="let em of emailad ">{{em}}<span (click)="close(em)" class="close">&times;</span></li>
+          
+               </ul>
         <br>
 
         <br>

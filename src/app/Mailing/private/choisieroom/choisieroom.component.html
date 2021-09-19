@@ -1,0 +1,25 @@
+
+
+
+<app-navprivate></app-navprivate>
+<ngx-ui-loader></ngx-ui-loader>
+<br>
+<div class="mar pad "> 
+
+
+
+ 
+<div class="form-group">
+    <h1>Please Select Room </h1>
+
+    <select class="form-control"  [(ngModel)]="selctednumber" (ngModelChange)="onSelcted($event)" id="exampleFormControlSelect1">
+     
+      <option *ngFor="let pro of Employes" [value]="pro.id" >{{pro.name}}</option>
+ 
+    </select>
+  </div>
+  
+  <button type="button" [routerLink]="['/dashbored/chat',selctednumber]"   class="btn btn-success text-center">Next</button>
+
+ 
+</div>

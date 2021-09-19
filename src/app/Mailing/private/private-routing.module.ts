@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AjoutClientComponent } from './ajout-client/ajout-client.component';
 import { AjoutadminComponent } from './ajoutadmin/ajoutadmin.component';
 import { ChatComponent } from './chat/chat.component';
+import { ChoisieroomComponent } from './choisieroom/choisieroom.component';
 import { ClientComponent } from './client/client.component';
 import { DashboredComponent } from './dashbored/dashbored.component';
 import { EmailDetailleComponent } from './email-detaille/email-detaille.component';
@@ -32,6 +33,11 @@ const routes: Routes = [
   {
     path:'listemployer',
     component:ListemployerComponent   
+    
+  },
+  {
+    path:'choseroom',
+    component:ChoisieroomComponent   
     
   },
   {
@@ -86,7 +92,7 @@ const routes: Routes = [
     
   },
   {
-    path:'chat',
+    path:'chat/:id',
     component:ChatComponent   
     
   },

@@ -10,8 +10,8 @@ import { styles } from '../../shared/Style/style';
 export class MapsComponent implements OnInit {
 
   constructor() { }
-  lat = 36.7949999;
-  lng = 10.0732371;
+  lat = 36.8172246;
+  lng = 10.1950546;
 
    ngOnInit(): void {
 
